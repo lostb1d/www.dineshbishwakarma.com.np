@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Geomatics Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Tailwind CSS CDN (for development only) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <nav class="bg-blue-800 text-white px-4 py-3 flex flex-wrap justify-between items-center">
+        <div class="font-bold text-xl">Portfolio</div>
+        <div class="space-x-4 flex flex-wrap">
+            <a href="{% url 'myinformation-list' %}" class="hover:underline">About</a>
+            <a href="{% url 'workinformation-list' %}" class="hover:underline">Work</a>
+            <a href="{% url 'experience-list' %}" class="hover:underline">Experience</a>
+            <a href="{% url 'myproject-list' %}" class="hover:underline">Projects</a>
+            <a href="{% url 'skill-list' %}" class="hover:underline">Skills</a>
+            <a href="{% url 'certification-list' %}" class="hover:underline">Certifications</a>
+            <a href="{% url 'blog-list' %}" class="hover:underline">Blog</a>
+            <a href="{% url 'feedback-list' %}" class="hover:underline">Contact</a>
+        </div>
+    </nav>
+    <main class="container mx-auto px-4 py-8">
+        {% block content %}{% endblock %}
+    </main>
+    <footer class="text-center text-gray-500 py-4 mt-12">
+        &copy; {{ now|date:"Y" }} Geomatics Portfolio
+    </footer>
+</body>
+</html>

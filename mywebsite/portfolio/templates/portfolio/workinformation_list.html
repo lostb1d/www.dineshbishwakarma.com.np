@@ -1,0 +1,26 @@
+{% extends 'base_generic.html' %}
+
+{% block content %}
+<h1 class="text-2xl font-bold mb-6">Work Information</h1>
+<div class="flex flex-col gap-4">
+    {% for work in object_list %}
+    <div class="bg-white rounded-xl shadow p-5">
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+            <div>
+                <h2 class="font-bold text-lg mb-1">{{ work.title }}</h2>
+                <p class="text-gray-700">{{ work.department }}, {{ work.office }}</p>
+                <p class="text-gray-500 text-sm">
+                    {{ work.start_date }} – 
+                    {% if work.end_date %}{{ work.end_date }}{% else %}Present{% endif %}
+                </p>
+                <p class="mt-2 text-gray-700">{{ work.description }}</p>
+            </div>
+        </div>
+    </div>
+    {% empty %}
+    <div class="bg-yellow-100 p-4 rounded shadow text-center">
+        <p>No work information found.</p>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
