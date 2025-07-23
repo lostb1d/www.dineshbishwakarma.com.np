@@ -16,6 +16,6 @@ jobs:
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
-        server: ${{ secrets.FTP_HOST }}
-        username: ${{ secrets.FTP_PASSWORD }}
-        password : ${{ secrets.FTP_PASSWORD }}
+        server: dineshportfolio.geoneer.com.np
+        username: cicd@dineshportfolio.geoneer.com.np
+        password : q5#r@)9igToycz$v
