@@ -16,6 +16,6 @@ jobs:
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
-        server: ftp.dineshportfolio.geoneer.com.np
+        server: dineshportfolio.geoneer.com.np
         username: cicd@dineshportfolio.geoneer.com.np
         password : q5#r@)9igToycz$v
