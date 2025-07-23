@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-@ci+vn8141j=vpklhgfql!*wnw+rgk6=lsetmaqh$r$@_f5yo2
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["dineshportfolio.geoneer.com.np", "https://dineshportfolio.geoneer.com.np", "http://dineshportfolio.geoneer.com.np"]
 
 
 # Application definition
