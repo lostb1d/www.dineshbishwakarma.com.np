@@ -8,13 +8,14 @@ jobs:
     - name: 🚚 Get latest code
       uses: actions/checkout@v3
     
+    - name: 🌐 Test server reachability
+      run: |
+        ping -c 4 ftp.geoneer.com.np
+        nslookup ftp.geoneer.com.np
+    
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
         server: ${{ secrets.FTP_HOST }}
-        username: ${{ secrets.FTP_USERNAME }}
-        password: ${{ secrets.FTP_PASSWORD }}
-
-
-
-
+        username: ${{ secrets.FTP_PASSWORD }}
+        password : ${{ secrets.FTP_PASSWORD }}
