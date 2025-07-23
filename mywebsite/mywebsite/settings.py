@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-@ci+vn8141j=vpklhgfql!*wnw+rgk6=lsetmaqh$r$@_f5yo2
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["dineshportfolio.geoneer.com.np", "https://dineshportfolio.geoneer.com.np", "http://dineshportfolio.geoneer.com.np"]
+ALLOWED_HOSTS = ["*", "dineshportfolio.geoneer.com.np", "https://dineshportfolio.geoneer.com.np", "http://dineshportfolio.geoneer.com.np"]
 
 
 # Application definition
@@ -128,5 +128,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
+STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
