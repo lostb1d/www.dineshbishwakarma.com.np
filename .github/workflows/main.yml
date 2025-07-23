@@ -1,16 +1,21 @@
-name: Deploy
-on:
-  push:
-    branches: [ main ]
+on: push
+name: 🚀 Deploy website on push
 jobs:
-  deploy:
+  web-deploy:
+    name: 🎉 Deploy
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-      - name: Set up LFTP
-        run: sudo apt-get install -y lftp
-      - name: Deploy to FTP
-        run: |
-          chmod +x deploy.sh
-          ./deploy.sh ${{ secrets.FTP_HOST }} ${{ secrets.FTP_USERNAME }} ${{ secrets.FTP_PASSWORD }} ./ /your.domain.com/src
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v3
+    
+    # - name: 🌐 Test server reachability
+    #   run: |
+    #     ping -c 4 ftp.geoneer.com.np
+    #     nslookup ftp.geoneer.com.np
+    
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      with:
+        server: dineshportfolio.geoneer.com.np
+        username: cicd@dineshportfolio.geoneer.com.np
+        password : q5#r@)9igToycz$v
